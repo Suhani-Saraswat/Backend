@@ -9,8 +9,6 @@ app.listen(port , () => {
 
 app.use((req, res) => {
     console.log("request received");
-    res.send({
-        name: "apple",
-        color: "red"
-    });
+    let code = "<h1>Fruits</h1> <ul><li>Apple</li><li>Mango</li></ul>"
+    res.send(code);
 });
