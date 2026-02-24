@@ -8,23 +8,23 @@ app.listen(port , () => {
 });
 
 app.get("/", (req, res) => {
-    console.log("you contacted root path");
+    res.send("you contacted root path");
 });
 
 app.get("/apple", (req, res) => {
-    console.log("you contacted apple path");
+    res.send("you contacted apple path");
 });
 
 app.get("/orange", (req, res) => {
-    console.log("you contacted orange path");
+    res.send("you contacted orange path");
 });
 
 app.get("*", (req, res) => {
-    console.log("this path does not exits");
+    res.send("this path does not exits");
 });
 
 app.post("/", (req, res) => {
-    console.log("you send a post request");
+    res.send("you send a post request");
 });
 
 // app.use((req, res) => {
