@@ -19,16 +19,16 @@ app.get("/orange", (req, res) => {
     res.send("you contacted orange path");
 });
 
-app.get("*", (req, res) => {
+app.get('*', (req, res) => {
     res.send("this path does not exits");
 });
 
 app.post("/", (req, res) => {
-    res.send("you send a post request");
+    res.send("you send a post request to root");
 });
 
 // app.use((req, res) => {
 //     console.log("request received");
 //     let code = "<h1>Fruits</h1> <ul><li>Apple</li><li>Mango</li></ul>"
 //     res.send(code);
-// });
+// }); 
