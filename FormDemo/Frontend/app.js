@@ -1,13 +1,27 @@
-function PersonMaker(name, age) {
-    const Person = {
+// Factory Function
+// function PersonMaker(name, age) {
+//     const person = {
+//         name: name,
+//         age: age,
+//         talk() {
+//             console.log(`Hi, my name is ${this.name}`);
+//         },
+//     };
+//     return person;
+// }
+// let p1 = PersonMaker("adam", 25);
+// let p2 = PersonMaker("eve", 24);
+
+
+//Constructors - doesn't return anything & start with capital
+function Person(name, age) {
+    const person = {
         name: name,
         age: age,
         talk() {
-            console.log(`Hi, my name is ${name}`);
-        }
+            console.log(`Hi, my name is ${this.name}`);
+        },
     };
-    return Person();
-}
 
-let P1 = PersonMaker("adam", 25);
-let P2 = PersonMaker("eve", 24);
+    return person;
+}
