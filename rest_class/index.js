@@ -10,7 +10,7 @@ app.set("views",path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-let post = [
+let posts = [
     {
         username: "apnacollege",
         content: "I love coding!",
@@ -26,7 +26,7 @@ let post = [
 ];
 
 app.get("/posts", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", { posts });
 });
 
 
