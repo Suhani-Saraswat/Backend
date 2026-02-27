@@ -8,11 +8,28 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname, "views"));
 
-app.set(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
+let post = [
+    {
+        username: "apnacollege",
+        content: "I love coding!",
+    },
+    {
+        username: "suhanisaraswat",
+        content: "Hard work is important to achieve success",
+    },
+    {
+        username: "rahulkumar",
+        content: "I got selected for my 1st intership!",
+    }
+];
+
+app.get("/posts", (req, res) => {
     res.send("serving working well!");
 });
+
+
 
 app.listen(port, () => {
     console.log("Listening to port 8080");
