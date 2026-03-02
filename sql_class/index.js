@@ -4,9 +4,19 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    database: 'test',
-    password: 'Suh@12MyS'
+    database: 'delta_app',
+    password: '********'
 });
+
+try {
+    connection.query("SHOW TABLES", (err, result) => {
+        if (err) throw err;
+        console.log(result);
+    });
+} catch (err) {
+    console.log(err);
+}
+connection.end();
 
 let getRandomUser = () => {
   return {
@@ -16,5 +26,3 @@ let getRandomUser = () => {
     password: faker.internet.password()
   };
 }
-
-console.log(getRandomUser());
