@@ -31,9 +31,10 @@ let getRandomUser = () => {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
+//Home Route
 app.get("/", (req, res) => {
     let q = `SELECT count(*) FROM user`;
-     try {
+    try {
         connection.query(q, (err, result) => {
             if (err) throw err;
             let count = result[0]["count(*)"];
@@ -44,6 +45,20 @@ app.get("/", (req, res) => {
         res.send("some error in database");
     }
 });
+
+//Show Route
+app.get("/user", (req, res) => {
+    let q = `SELECT * FROM user`;
+    try {
+        connection.query(q, (err, users) => {
+            if (err) throw err;
+            res.render("showusers.ejs", { users });
+        });
+    } catch (err) {
+        console.log(err);
+        res.send("some error in database");
+    }
+})
 
 app.listen("8080", () => {
     console.log("server is listening to port 8080");
