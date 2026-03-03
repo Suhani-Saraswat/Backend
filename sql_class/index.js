@@ -3,6 +3,12 @@ const mysql = require('mysql2');
 const express = require('express');
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
+
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/views"));
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -27,9 +33,6 @@ let getRandomUser = () => {
 // for(let i=1; i<=100; i++){
 //     data.push(getRandomUser()); //100 fake users
 // }
-
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/views"));
 
 //Home Route
 app.get("/", (req, res) => {
@@ -58,7 +61,54 @@ app.get("/user", (req, res) => {
         console.log(err);
         res.send("some error in database");
     }
-})
+});
+
+//Edit Route
+app.get("/user/:id/edit", (req, res) => {
+  let { id } = req.params;
+  let q = `SELECT * FROM user WHERE id='${id}'`;
+
+  try {
+    connection.query(q, (err, result) => {
+      if (err) throw err;
+      let user = result[0];
+      res.render("edit.ejs", { user });
+    });
+  } catch (err) {
+    res.send("some error with DB");
+  }
+});
+
+//Update Route
+app.patch("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let { username, password } = req.body;
+  console.log(username);
+  let q = `SELECT * FROM user WHERE id='${id}'`;
+
+  try {
+    connection.query(q, (err, result) => {
+      if (err) throw err;
+      let user = result[0];
+
+      if (user.password != password) {
+        res.send("WRONG Password entered!");
+      } else {
+        let q2 = `UPDATE user SET username='${username}' WHERE id='${id}'`;
+        connection.query(q2, (err, result) => {
+          if (err) throw err;
+          else {
+            console.log(result);
+            console.log("updated!");
+            res.redirect("/user");
+          }
+        });
+      }
+    });
+  } catch (err) {
+    res.send("some error with DB");
+  }
+});
 
 app.listen("8080", () => {
     console.log("server is listening to port 8080");
