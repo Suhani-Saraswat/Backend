@@ -27,6 +27,14 @@ User.updateOne({name: "Bruce"}, {age: 49})
     console.log(err);
 });
 
+//Update Many
+User.updateMany({age: {$gt: 48}}, {age: 55})
+.then((res) => {
+    console.log(res);
+})
+.catch((err) => {
+    console.log(err);
+});
 
 
 //Find one
