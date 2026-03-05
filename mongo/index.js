@@ -19,15 +19,22 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 //Find One And Update
-User.findOneAndUpdate({name: "Bruce"}, {age: 42}, {new: true})
-.then((res) => {
-    console.log(res);
-})
-.catch((err) => {
-    console.log(err);
-});
+// User.findOneAndUpdate({name: "Bruce"}, {age: 42}, {new: true})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
 
-
+//Find By Id And Update
+// User.findByIdAndUpdate({_id: '69a9528769c2a7c9ab8af7af' }, {age: 42}, {new: true})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
 
 //Update One
 // User.updateOne({name: "Bruce"}, {age: 49})
