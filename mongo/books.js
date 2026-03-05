@@ -25,13 +25,13 @@ const bookSchema = new mongoose.Schema({
 
 const Book = mongoose.model("Book", bookSchema);
 
-let book2 = new Book({
+let book3 = new Book({
     title: "How to kill a Mockingbird",
     author: "Harper Lee",
     price: "299",
 });
 
-book2.save()
+book3.save()
 .then((res) => {
     console.log(res);
 }) .catch ((err) => {
