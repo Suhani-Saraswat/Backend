@@ -37,16 +37,22 @@ const User = mongoose.model("User", userSchema);
 // });
 
 //Find By Id And Delete
-User.findByIdAndDelete('69a9528769c2a7c9ab8af7ad')
+// User.findByIdAndDelete('69a9528769c2a7c9ab8af7ad')
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+
+//Find One And Delete
+User.findOneAndDelete({name: "Peter"})
 .then((res) => {
     console.log(res);
 })
 .catch((err) => {
     console.log(err);
 });
-
-//Find One And Delete
-
 
 
 
