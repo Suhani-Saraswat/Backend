@@ -19,13 +19,13 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 //Update One
-User.updateOne({name: "Bruce"}, {age: 49})
-.then((res) => {
-    console.log(res);
-})
-.catch((err) => {
-    console.log(err);
-});
+// User.updateOne({name: "Bruce"}, {age: 49})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
 
 //Update Many
 User.updateMany({age: {$gt: 48}}, {age: 55})
