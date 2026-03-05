@@ -19,14 +19,15 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 //Delete One
-User.deleteOne({name: "Bruce"})
-.then((res) => {
-    console.log(res);
-})
-.catch((err) => {
-    console.log(err);
-});
+// User.deleteOne({name: "Bruce"})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
 
+//Delete Many
 // User.deleteMany({age: 48})
 // .then((res) => {
 //     console.log(res);
