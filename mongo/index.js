@@ -46,13 +46,13 @@ const User = mongoose.model("User", userSchema);
 // });
 
 //Find One And Delete
-User.findOneAndDelete({name: "Peter"})
-.then((res) => {
-    console.log(res);
-})
-.catch((err) => {
-    console.log(err);
-});
+// User.findOneAndDelete({name: "Peter"})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
 
 
 
