@@ -18,6 +18,17 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+//Update One
+User.updateOne({name: "Bruce"}, {age: 49})
+.then((res) => {
+    console.log(res);
+})
+.catch((err) => {
+    console.log(err);
+});
+
+
+
 //Find one
 // User.findOne({ _id: '69a951aa99cb1a8bb70cc726' })
 // .then((res) => {
@@ -27,12 +38,12 @@ const User = mongoose.model("User", userSchema);
 // });
 
 //Find By ID
-User.findById('69a951aa99cb1a8bb70cc726')
-.then((res) => {
-    console.log(res);
-}).catch((err) => {
-    console.log(err);
-});
+// User.findById('69a951aa99cb1a8bb70cc726')
+// .then((res) => {
+//     console.log(res);
+// }).catch((err) => {
+//     console.log(err);
+// });
 
 
 
