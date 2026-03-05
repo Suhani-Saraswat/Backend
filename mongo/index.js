@@ -18,6 +18,25 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+//Delete One
+User.deleteOne({name: "Bruce"})
+.then((res) => {
+    console.log(res);
+})
+.catch((err) => {
+    console.log(err);
+});
+
+// User.deleteMany({age: 48})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+
+
+
 //Find One And Update
 // User.findOneAndUpdate({name: "Bruce"}, {age: 42}, {new: true})
 // .then((res) => {
@@ -35,6 +54,8 @@ const User = mongoose.model("User", userSchema);
 // .catch((err) => {
 //     console.log(err);
 // });
+
+
 
 //Update One
 // User.updateOne({name: "Bruce"}, {age: 49})
