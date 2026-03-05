@@ -18,6 +18,17 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+//Find One And Update
+User.findOneAndUpdate({name: "Bruce"}, {age: 42}, {new: true})
+.then((res) => {
+    console.log(res);
+})
+.catch((err) => {
+    console.log(err);
+});
+
+
+
 //Update One
 // User.updateOne({name: "Bruce"}, {age: 49})
 // .then((res) => {
@@ -28,13 +39,14 @@ const User = mongoose.model("User", userSchema);
 // });
 
 //Update Many
-User.updateMany({age: {$gt: 48}}, {age: 55})
-.then((res) => {
-    console.log(res);
-})
-.catch((err) => {
-    console.log(err);
-});
+// User.updateMany({age: {$gt: 48}}, {age: 55})
+// .then((res) => {
+//     console.log(res);
+// })
+// .catch((err) => {
+//     console.log(err);
+// });
+
 
 
 //Find one
