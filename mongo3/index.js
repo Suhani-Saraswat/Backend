@@ -24,7 +24,7 @@ async function main() {
 //Index Route
 app.get("/chats",async (req, res) => {
     let chats = await Chat.find();
-    // console.log(chats);
+    console.log(chats);
     res.render("index.ejs", { chats });
 });
 
@@ -67,7 +67,7 @@ app.put("/chats/:id", async(req, res) => {
         { msg: newMsg },
         { runValidators: true, new: true },
     );
-    // console.log(updatedChat);
+    console.log(updatedChat);
     res.redirect("/chats");
 });
 

@@ -68,4 +68,9 @@ let allChats = [
     },
 ]
 
-Chat.insertMany(allChats);
+Chat.insertMany(allChats)
+.then((res) => {
+    console.log(res);
+}).catch((err) => {
+    console.log(err);
+});
