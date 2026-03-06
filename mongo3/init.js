@@ -48,6 +48,24 @@ let allChats = [
         msg: "Love You!",
         created_at: new Date(),
     },
+    {
+        from: "yash",
+        to: "preeti",
+        msg: "Provide me notes!",
+        created_at: new Date(),
+    },
+    {
+        from: "rajesh",
+        to: "riya",
+        msg: "How are you?",
+        created_at: new Date(),
+    },
+    {
+        from: "siya",
+        to: "sid",
+        msg: "Will meet today!",
+        created_at: new Date(),
+    },
 ]
 
 Chat.insertMany(allChats);
