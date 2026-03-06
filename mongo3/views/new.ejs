@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chat</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            background-color: #d9daff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            color: #5a3e51;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background: #a883ba;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column; 
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #6366f1;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none; 
+        }
+
+        button {
+            background-color: #9355b1;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #873aad;
+        }   
+    </style>
+</head>
+<body>
+    <h1>Write New Chat..</h1>
+
+    <div class="box">
+        <form class="form" method="POST" action="/chats">
+            <input placeholder="who are you?" name="from">
+            <textarea name="msg">Write your message here..</textarea>
+            <input placeholder="add receiver" name="to">
+            <button>Create Chat</button>
+        </form>
+    </div>
+</body>
+</html>
