@@ -1,0 +1,81 @@
+body {
+    background-color: #d9daff;
+}
+
+button {
+    background-color: #a883ba;
+    border: 1px solid #000000;
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #5a3e51;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat {
+    height: 230px;
+    width: 200px;
+    border: 1px solid #000000;
+    margin: 10px;
+    text-align: center;
+    background-color: #a883ba;
+    /* padding-top: 20px; */
+}
+
+.msg {
+    background-color: aliceblue;
+    width: 90%;
+    margin: 10px;   
+}
+
+.chat-msg {
+    margin-block-end: 2px;
+}
+
+.date {
+    font-size: 12px;
+    margin: none;
+    margin-block-start: 2px;
+    margin-block-end: 2px;
+}
+.edit {
+    background-color: #a883ba;
+    border: 1px solid #000000;
+    color: white;
+    width: 40px;
+    height: 15px;
+    border-radius: 2rem;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+.delete {
+    background-color: #a883ba;
+    border: 1px solid #000000;
+    color: white;
+    width: 40px;
+    height: 15px;
+    border-radius: 2rem;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 5px;        
+}
