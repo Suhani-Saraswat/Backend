@@ -12,11 +12,17 @@ const app = express();
 // });
 
 // Utility Middleware (Logger)
-app.use((req, res, next) => {
-    req.time = new Date(Date.now()).toString();
-    console.log(req.method, req.hostname, req.path, req.time);
+// app.use((req, res, next) => {
+//     req.time = new Date(Date.now()).toString();
+//     console.log(req.method, req.hostname, req.path, req.time);
+//     next();
+// });
+
+// Middleware for specific path only
+app.use("/random", (req, res, next) => {
+    console.log("I am only for random");
     next();
-})
+});
 
 app.get("/", (req, res) => {
     res.send("Hi, I am root");
@@ -24,6 +30,11 @@ app.get("/", (req, res) => {
 
 app.get("/random", (req, res) => {
     res.send("this is a random page");
+});
+
+// 404 Error
+app.use((req, res) => {
+    res.status(404).send("Page not found!");
 });
 
 app.listen(8080, () => {
