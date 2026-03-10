@@ -52,8 +52,9 @@ app.get("/err", (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-    console.log("--------ERROR--------");
-    res.send(err);
+    // console.log("--------ERROR--------");
+    let { status = 500, message = "SOME ERROR" } = err;
+    res.status(status).send(message);
 });
 
 // 404 Error
