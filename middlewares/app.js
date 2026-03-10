@@ -51,6 +51,11 @@ app.get("/err", (req, res) => {
     abcd = abcd;
 });
 
+// Activity
+app.get("/admin", (req, res) => {
+    throw new ExpressError(403, "Access to admin is Forbidden");
+});
+
 app.use((err, req, res, next) => {
     // console.log("--------ERROR--------");
     let { status = 500, message = "SOME ERROR" } = err;
